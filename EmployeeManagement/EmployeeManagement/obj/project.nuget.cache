@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H13ADX1MFIURgbRWVNPKb2Pn02yKdVbFyLBQ3fbWtfffdi9Rd5mPyaZsIoGjEhAuPf6Ml02VlHUqAOca1+pNoQ==",
+  "dgSpecHash": "gocb2WT8uAkDbT8gddbmJoZNPujOHW/kXozmMVXcL+p4XbOir9W449OcBRCqq5ER6JQlj5fU+XLbkEVmWUFRlA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+  "projectFilePath": "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

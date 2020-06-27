@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {}
+    "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
+    "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+        "projectUniqueName": "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
         "projectName": "EmployeeManagement",
-        "projectPath": "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
+        "projectPath": "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\EmployeeManagement.csproj",
         "packagesPath": "C:\\Users\\ribes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ribes\\source\\repos\\EmployeeManagement\\EmployeeManagement\\obj\\",
+        "outputPath": "C:\\Users\\ribes\\Documents\\GitHub\\ManagementSystem\\EmployeeManagement\\EmployeeManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
