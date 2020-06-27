@@ -15,17 +15,17 @@ namespace EmployeeManagement.Controllers
         {
             this._employeeRepostiory = employeeRepostiory;
         }
-        public ViewResult Index(int id)
+        public ViewResult Index()
         {
             var model= _employeeRepostiory.GetAllEmployees();
             return View(model);
 
         }
-        public ViewResult Details()
+        public ViewResult Details(int? id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
-                Employee = _employeeRepostiory.getEmployeeDetails(1),
+                Employee = _employeeRepostiory.getEmployeeDetails(id??1),
                 PageTitle = "Employee Details"
 
             };
