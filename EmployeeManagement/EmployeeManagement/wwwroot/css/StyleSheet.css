@@ -7,3 +7,7 @@
 .mainHeight {
     width: 262px;
 }
+.imageThumbnail {
+    height: 200px;
+    width: auto;
+}
