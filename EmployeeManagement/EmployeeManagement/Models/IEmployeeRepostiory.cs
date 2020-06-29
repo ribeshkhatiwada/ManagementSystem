@@ -7,9 +7,11 @@ namespace EmployeeManagement.Models
 {
    public interface IEmployeeRepostiory
     {
-        Employees getEmployeeDetails(int? id);
+        Employees getEmployeeDetails(int id);
         IEnumerable<Employees> GetAllEmployees();
         Employees Add(Employees employees);
+        Employees Update(Employees employeeschanges);
+        Employees Delete(int id);
 
     }
 }

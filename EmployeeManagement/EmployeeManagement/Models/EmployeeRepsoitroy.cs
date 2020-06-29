@@ -25,14 +25,36 @@ namespace EmployeeManagement.Models
             return employees;
         }
 
+        public Employees Delete(int id)
+        {
+           Employees emps= _employees.FirstOrDefault(e => e.Id == id);
+            if(emps != null)
+            {
+                _employees.Remove(emps);
+            }
+            return emps;
+        }
+
         public IEnumerable<Employees> GetAllEmployees()
         {
             return _employees;
         }
 
-        public Employees getEmployeeDetails(int? id)
+        public Employees getEmployeeDetails(int id)
         {
             return _employees.FirstOrDefault(e => e.Id == id);
+        }
+
+        public Employees Update(Employees employeeschanges)
+        {
+            Employees emps = _employees.FirstOrDefault(e => e.Id == employeeschanges.Id);
+            if (emps != null)
+            {
+                emps.Name = employeeschanges.Name;
+                emps.Email = employeeschanges.Email;
+                emps.Department = employeeschanges.Department;
+            }
+            return emps;
         }
     }
 }
