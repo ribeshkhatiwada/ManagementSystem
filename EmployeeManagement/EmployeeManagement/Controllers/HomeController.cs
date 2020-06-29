@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EmployeeManagement.Models;
 using EmployeeManagement.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EmployeeManagement.Controllers
 {
@@ -37,10 +38,15 @@ namespace EmployeeManagement.Controllers
             return View();
         }
         [HttpPost]
-        public RedirectToActionResult Create(Employees emp)
+        public IActionResult Create(Employees emp)
         {
-           Employees newEmp =  _employeeRepostiory.Add(emp);
-            return RedirectToAction("details", new { id = newEmp.Id });
+            if (ModelState.IsValid)
+            {
+                Employees newEmp = _employeeRepostiory.Add(emp);
+                return RedirectToAction("details", new { id = newEmp.Id });
+            }
+            return View();
+           
         }
         
         
