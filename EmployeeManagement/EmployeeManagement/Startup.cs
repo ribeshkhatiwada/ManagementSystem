@@ -23,7 +23,7 @@ namespace EmployeeManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddScoped<IEmployeeRepostiory, EmployeeRepsoitroy>();
+            services.AddSingleton<IEmployeeRepostiory, EmployeeRepsoitroy>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

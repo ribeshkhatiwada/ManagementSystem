@@ -31,6 +31,17 @@ namespace EmployeeManagement.Controllers
             };
             return View(homeDetailsViewModel);
         }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public RedirectToActionResult Create(Employees emp)
+        {
+           Employees newEmp =  _employeeRepostiory.Add(emp);
+            return RedirectToAction("details", new { id = newEmp.Id });
+        }
         
         
     }
