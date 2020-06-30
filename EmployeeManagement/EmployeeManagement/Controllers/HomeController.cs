@@ -29,9 +29,15 @@ namespace EmployeeManagement.Controllers
         }
         public ViewResult Details(int? id)
         {
+            Employees employees = _employeeRepostiory.getEmployeeDetails(id.Value);
+            if(employees == null)
+            {
+                Response.StatusCode = 404;
+                return View("EmployeeNotFound", id.Value);
+            }
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
             {
-                Employee = _employeeRepostiory.getEmployeeDetails(id??1),
+                Employee =employees,
                 PageTitle = "Employee Details"
 
             };
@@ -47,14 +53,7 @@ namespace EmployeeManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = null;
-                if(model.Photo != null)
-                {
-                  string uploadsFolder =  Path.Combine(hostingEnvironment.WebRootPath, "images");
-                  uniqueFileName= Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
-                    string filepath = Path.Combine(uploadsFolder, uniqueFileName);
-                    model.Photo.CopyTo(new FileStream(filepath, FileMode.Create));
-                }
+                string uniqueFileName = ProcessUploadedFile(model);
                 Employees newEmp = new Employees
                 {
                     Name = model.Name,
@@ -67,6 +66,65 @@ namespace EmployeeManagement.Controllers
             }
             return View();
            
+        }
+
+        private string ProcessUploadedFile(EmployeeCreatViewModel model)
+        {
+            string uniqueFileName = null;
+            if (model.Photo != null)
+            {
+                string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                string filepath = Path.Combine(uploadsFolder, uniqueFileName);
+                using(var fileStream = new FileStream(filepath, FileMode.Create))
+                {
+                    model.Photo.CopyTo(fileStream);
+
+                }
+            }
+
+            return uniqueFileName;
+        }
+
+        [HttpGet]
+        public ViewResult edit(int id)
+        {
+            var employee = _employeeRepostiory.getEmployeeDetails(id);
+            EmployeeEditViewModel employeeEditViewModel = new EmployeeEditViewModel()
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Department = employee.Department,
+                Email = employee.Email,
+                ExistingPhotoPath = employee.PhotoPath
+            };
+
+            return View(employeeEditViewModel);
+        }
+        [HttpPost]
+        public IActionResult Edit(EmployeeEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Employees employees = _employeeRepostiory.getEmployeeDetails(model.Id);
+                employees.Name = model.Name;
+                employees.Email = model.Email;
+                employees.Department = model.Department;
+                if(model.Photo != null)
+                {
+                    if(model.ExistingPhotoPath != null)
+                    {
+                       string filePath= Path.Combine(hostingEnvironment.WebRootPath, "images", model.ExistingPhotoPath);
+                        System.IO.File.Delete(filePath);
+                    }
+                    employees.PhotoPath = ProcessUploadedFile(model);
+
+
+                }
+                _employeeRepostiory.Update(employees);
+                return RedirectToAction("index");
+            }
+            return View();
         }
         
         
