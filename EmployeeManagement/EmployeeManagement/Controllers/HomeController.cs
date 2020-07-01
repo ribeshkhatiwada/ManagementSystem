@@ -43,6 +43,11 @@ namespace EmployeeManagement.Controllers
             };
             return View(homeDetailsViewModel);
         }
+        public IActionResult Delete(int id)
+        {
+            _employeeRepostiory.Delete(id);
+            return RedirectToAction("Index");
+        }
         [HttpGet]
         public ViewResult Create()
         {
