@@ -23,8 +23,13 @@ using EmployeeManagement.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ddd0f54011fda2d0aee4c83ae23b8f72bb500eb3", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c19113bece1b6abca75b7f9c1cf1dbc4464a53e9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"05510e7d1088149d5e7e08ac422524770111eda0", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Employees>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-img-top imageThumbnail"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -92,7 +97,7 @@ using EmployeeManagement.Models;
             WriteLiteral("</h3>\r\n                </div>\r\n                ");
             EndContext();
             BeginContext(458, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb37025", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb37218", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ImageTagHelper>();
@@ -125,7 +130,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper.AppendVersion = true;
             WriteLiteral("\r\n                <div class=\"card-footer text-center\">\r\n                    ");
             EndContext();
             BeginContext(621, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb39364", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb39557", async() => {
                 BeginContext(723, 4, true);
                 WriteLiteral("View");
                 EndContext();
@@ -163,7 +168,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper.AppendVersion = true;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(753, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb312062", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb312255", async() => {
                 BeginContext(852, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -201,7 +206,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper.AppendVersion = true;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(882, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb314758", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddd0f54011fda2d0aee4c83ae23b8f72bb500eb314951", async() => {
                 BeginContext(982, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

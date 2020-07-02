@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
 using EmployeeManagement.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace EmployeeManagement.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IEmployeeRepostiory _employeeRepostiory;
@@ -21,12 +23,14 @@ namespace EmployeeManagement.Controllers
             this._employeeRepostiory = employeeRepostiory;
             this.hostingEnvironment = hostingEnvironment;
         }
+        [AllowAnonymous]
         public ViewResult Index()
         {
             var model= _employeeRepostiory.GetAllEmployees();
             return View(model);
 
         }
+        [AllowAnonymous]
         public ViewResult Details(int? id)
         {
             Employees employees = _employeeRepostiory.getEmployeeDetails(id.Value);
@@ -45,6 +49,18 @@ namespace EmployeeManagement.Controllers
         }
         public IActionResult Delete(int id)
         {
+            EmployeeCreatViewModel models = new EmployeeCreatViewModel();
+            Employees model = _employeeRepostiory.getEmployeeDetails(id);
+            if (model.PhotoPath != null)
+            {
+               
+                    string filePath = Path.Combine(hostingEnvironment.WebRootPath, "images", model.PhotoPath);
+                    System.IO.File.Delete(filePath);
+                
+                model.PhotoPath = ProcessUploadedFile(models);
+
+
+            }
             _employeeRepostiory.Delete(id);
             return RedirectToAction("Index");
         }
@@ -54,6 +70,7 @@ namespace EmployeeManagement.Controllers
             return View();
         }
         [HttpPost]
+
         public IActionResult Create(EmployeeCreatViewModel model)
         {
             if (ModelState.IsValid)
