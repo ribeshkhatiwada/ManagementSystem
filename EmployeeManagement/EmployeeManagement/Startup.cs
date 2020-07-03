@@ -38,6 +38,7 @@ namespace EmployeeManagement
                 options.Password.RequireUppercase = false;
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
+                options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<AppDbContext>();
            
             services.AddMvc( options =>

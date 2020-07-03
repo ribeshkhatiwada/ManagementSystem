@@ -14,25 +14,19 @@ namespace EmployeeManagement.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> userManager;
-
+        private readonly SignInManager<IdentityUser> SignInManager;
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             this.userManager = userManager;
             SignInManager = signInManager;
         }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
              await SignInManager.SignOutAsync();
             return RedirectToAction("index", "home");
         }
-        //public async Task<IActionResult> Login()
-        //{
-        //    await SignInManager.SignInAsync();
-        //    return RedirectToAction("index", "home");
-        //}
-
-        public SignInManager<IdentityUser> SignInManager { get; }
 
         [HttpGet]
         [AllowAnonymous]
@@ -40,6 +34,27 @@ namespace EmployeeManagement.Controllers
         {
             return View();
         }
+
+        //[AcceptVerbs("Get","Post")]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> IsEmailOrUserNameInUse(string email,string userName)
+        //{
+        //    var emailUser = await userManager.FindByEmailAsync(email);
+        //    var SignInManager = await userManager.FindByNameAsync(userName);
+        //    if(emailUser == null || SignInManager == null)
+        //    {
+        //        return Json(true);
+        //    }
+        //    else
+        //    {
+               
+        //            return Json($"{emailUser} is already taken");
+               
+        //    }
+            
+          
+        //}
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -61,12 +76,14 @@ namespace EmployeeManagement.Controllers
             }
             return View(model);
         }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -115,7 +132,7 @@ namespace EmployeeManagement.Controllers
 
                 if (result.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(returnUrl))
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
                     }

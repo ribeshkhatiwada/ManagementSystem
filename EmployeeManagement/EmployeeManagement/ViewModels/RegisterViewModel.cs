@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace EmployeeManagement.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password",
-            ErrorMessage = "Password and confirmation password do not match.")]
+        ErrorMessage = "Password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }
