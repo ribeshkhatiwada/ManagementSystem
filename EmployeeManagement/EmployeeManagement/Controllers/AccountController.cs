@@ -13,9 +13,10 @@ namespace EmployeeManagement.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> SignInManager;
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> SignInManager;
+        public AccountController(UserManager<ApplicationUser> userManager,
+                                 SignInManager<ApplicationUser> signInManager)
         {
             this.userManager = userManager;
             SignInManager = signInManager;
@@ -25,7 +26,7 @@ namespace EmployeeManagement.Controllers
         public async Task<IActionResult> Logout()
         {
              await SignInManager.SignOutAsync();
-            return RedirectToAction("index", "home");
+             return RedirectToAction("index", "home");
         }
 
         [HttpGet]
@@ -61,7 +62,7 @@ namespace EmployeeManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = model.UserName, Email = model.Email  };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, City=model.city  };
                 var result =await userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -144,6 +145,11 @@ namespace EmployeeManagement.Controllers
             }
             return View(model);
         }
-       
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
+    }
 }

@@ -31,6 +31,7 @@ namespace EmployeeManagement.Controllers
 
         }
         [AllowAnonymous]
+
         public ViewResult Details(int? id)
         {
             Employees employees = _employeeRepostiory.getEmployeeDetails(id.Value);
@@ -47,6 +48,7 @@ namespace EmployeeManagement.Controllers
             };
             return View(homeDetailsViewModel);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             EmployeeCreatViewModel models = new EmployeeCreatViewModel();
@@ -65,11 +67,13 @@ namespace EmployeeManagement.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
+        [AllowAnonymous]
         public ViewResult Create()
         {
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
 
         public IActionResult Create(EmployeeCreatViewModel model)
         {

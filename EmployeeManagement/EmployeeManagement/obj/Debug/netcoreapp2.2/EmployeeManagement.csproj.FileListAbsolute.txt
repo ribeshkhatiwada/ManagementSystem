@@ -65,3 +65,8 @@ C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeMana
 C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Admin\CreateRole.cshtml.g.cs
+C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Admin\ListRole.cshtml.g.cs
+C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Admin\EditRole.cshtml.g.cs
+C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Admin\EditUsersInRole.cshtml.g.cs
+C:\Users\ribes\Documents\GitHub\ManagementSystem\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccessDenied.cshtml.g.cs
